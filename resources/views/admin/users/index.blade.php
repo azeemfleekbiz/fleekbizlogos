@@ -26,29 +26,38 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
                   <th>Email</th>
-                  <th>Phone</th>
-                  <th>Company</th>
+                  <th>Phone</th>                  
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                
+                 @foreach( $users as $user )
                 <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.0</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1</td>
-                  <td>A</td>
+                  <td>{{$user->f_name}}</td>
+                  <td>{{$user->l_name}}</td>
+                  <td>{{$user->email}}</td>
+                  <td>{{$user->phone}}</td>
+                  <td><a href="#" rel="" 
+
+              class="iframe-form-open make-modal-large btn btn-default" 
+
+              data-toggle="modal" data-target="#iframeModal" 
+
+              title="Edit Coupon: {{$user->f_name}}  {{$user->l_name}}">
+
+            <span class="glyphicon glyphicon-pencil"></span>
+
+            </a>
+                        <a href="" rel="" type="button" 
+                class="btn btn-info make-modal-large iframe-form-open" 
+                data-toggle="modal"  title="Delete Coupon">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a></td>
                 </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.1</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1.1</td>
-                  <td>A</td>
-                </tr>
+                 @endforeach
                 
                
                 </tbody>

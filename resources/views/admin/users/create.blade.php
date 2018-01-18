@@ -14,14 +14,15 @@
             
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" method="post" action="{{ route('admin/users/adduser') }}">
+            <form class="form-horizontal" method="POST" action="{{url('/admin/users/addauthor')}}">
                  {{ csrf_field() }}
               <div class="box-body">                  
                  <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Select User Type</label>
 
                   <div class="col-sm-10">
-                      <select class="form-control" name="user_role" id="user_role" disabled="disabled">
+                      <select class="form-control" name="user_role" id="user_role" required="required">
+                     <option value="">Select User Role</option> 
                       @foreach( $user_role as $userrole )
                       <option value="{{$userrole->id}}">{{$userrole->name}}</option>                   
                      @endforeach
@@ -34,7 +35,7 @@
                   <label for="inputEmail3" class="col-sm-2 control-label">First Name</label>
 
                   <div class="col-sm-10">
-                      <input type="text" name="f_name" class="form-control" id="inputEmail3" placeholder="First Name">
+                      <input type="text" name="f_name" class="form-control" id="inputEmail3" placeholder="First Name" required="required">
                   </div>
                 </div>
                   
@@ -42,7 +43,7 @@
                   <label for="inputEmail3" class="col-sm-2 control-label">Last Name</label>
 
                   <div class="col-sm-10">
-                    <input type="text" name="l_name" class="form-control" id="inputEmail3" placeholder="Last Name">
+                    <input type="text" name="l_name" class="form-control" id="inputEmail3" placeholder="Last Name" required="required">
                   </div>
                 </div>
                   
@@ -50,7 +51,7 @@
                   <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 
                   <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                      <input type="text" name="email" id="email" class="form-control" id="inputEmail3" placeholder="Email" required="required">
                   </div>
                 </div>
                   
@@ -58,7 +59,7 @@
                   <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
 
                   <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required="required">
                   </div>
                 </div>
                   
@@ -66,7 +67,7 @@
                   <label for="inputPassword3" class="col-sm-2 control-label">Confirm Password</label>
 
                   <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Confirm Password">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Confirm Password" required="required">
                   </div>
                 </div>
                   
@@ -74,7 +75,7 @@
                   <label for="inputEmail3" class="col-sm-2 control-label">Phone Number</label>
 
                   <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                      <input type="text" class="form-control" name="phone" id="inputEmail3" placeholder="Phone Number" required="required">
                   </div>
                 </div>
                   
@@ -82,10 +83,17 @@
                   <label for="inputEmail3" class="col-sm-2 control-label">Company Name</label>
 
                   <div class="col-sm-10">
-                      <input type="text" name="company_name" class="form-control" id="inputEmail3" placeholder="Company Name">
+                      <input type="text" name="company_name" class="form-control" id="inputEmail3" placeholder="Company Name" required="required">
                   </div>
                 </div>  
                   
+                  <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Company Phone Number</label>
+
+                  <div class="col-sm-10">
+                      <input type="text" class="form-control" name="company_phone" id="inputEmail3" placeholder="Company Phone Number" required="required">
+                  </div>
+                </div>
                   
                   <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">About Company </label>
@@ -108,7 +116,7 @@
                   <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Website Url</label>
                   <div class="col-sm-10">
-                      <input type="text" name="website_url" class="form-control" id="inputEmail3" placeholder="Web Site url">
+                      <input type="text" name="website_url" class="form-control" id="inputEmail3" placeholder="Web Site url" required="required">
                   </div>
                 </div>  
                 
@@ -116,9 +124,9 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                  <input type="submit" class="btn btn-info pull-right" value="Submit"></button>
                  
-                <button type="submit" class="btn btn-info pull-left" style="margin-left: 672px">Cancel</button>
+                <button type="reset" value="Reset" class="btn btn-info pull-left" style="margin-left: 672px">Reset</button>
               </div>
               <!-- /.box-footer -->
             </form>

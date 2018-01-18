@@ -25,5 +25,5 @@ Route::get('/admin/users', ['uses' => 'Admin\Users\UsersController@index']);  //
 
 Route::get('/admin/users/create', ['uses' => 'Admin\Users\UsersController@create']);  //create user form
 
-Route::post('/admin/users/adduser', ['uses' => 'Admin\Users\UsersController@addAuthor']);  //create user form
+Route::post('/admin/users/addauthor', ['uses' => 'Admin\Users\UsersController@addAuthor']);  //create user form
 
