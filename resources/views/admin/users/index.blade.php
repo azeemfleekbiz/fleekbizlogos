@@ -40,11 +40,11 @@
                   <td>{{$user->l_name}}</td>
                   <td>{{$user->email}}</td>
                   <td>{{$user->phone}}</td>
-                  <td><a href="#" rel="" 
+                  <td><a href="{{ url('/admin/users/edit/'.$user->id) }}" rel="" 
 
               class="iframe-form-open make-modal-large btn btn-default" 
 
-              data-toggle="modal" data-target="#iframeModal" 
+             
 
               title="Edit Coupon: {{$user->f_name}}  {{$user->l_name}}">
 

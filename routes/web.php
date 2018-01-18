@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('logout', 'Auth\LoginController@logout');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin/dashboard', 'AdminController@dashboard');
@@ -26,4 +28,8 @@ Route::get('/admin/users', ['uses' => 'Admin\Users\UsersController@index']);  //
 Route::get('/admin/users/create', ['uses' => 'Admin\Users\UsersController@create']);  //create user form
 
 Route::post('/admin/users/addauthor', ['uses' => 'Admin\Users\UsersController@addAuthor']);  //create user form
+
+Route::get('/admin/users/edit/{slug}', ['uses' => 'Admin\Users\UsersController@editAuthor']);  //create user form
+
+Route::post('/admin/users/update-author', ['uses' => 'Admin\Users\UsersController@updateAuthor']);  //create user form
 
