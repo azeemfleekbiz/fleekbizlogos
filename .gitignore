@@ -12,3 +12,4 @@ yarn-error.log
 /nbproject/private/
 *.properties
 *.properties
+nbproject/private/private.properties
