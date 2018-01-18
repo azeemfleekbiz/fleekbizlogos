@@ -7,23 +7,24 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
+      @if ($errors->has('email'))
+      <div class="alert-danger">
+        <strong>{{ $errors->first('email') }}</strong>
+      </div>
+      @endif
     <form action="{{ route('login') }}" method="post">
   {{ csrf_field() }}
       <div class="form-group has-feedback">
           <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
-      @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+      
       <div class="form-group has-feedback">
           <input type="password" class="form-control" placeholder="Password" name="password" required>
            @if ($errors->has('password'))
-                                    <span class="help-block">
+                                     <div class="alert-danger">
                                         <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                    </div>
                                 @endif
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
