@@ -8,9 +8,12 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
       @if ($errors->has('email'))
-      <div class="alert-danger">
-        <strong>{{ $errors->first('email') }}</strong>
-      </div>
+      <div class="bs-example">
+    <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Error!</strong> Invalid Email Address/Password.
+    </div>
+</div>
       @endif
     <form action="{{ route('login') }}" method="post">
   {{ csrf_field() }}
