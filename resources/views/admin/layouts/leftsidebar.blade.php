@@ -82,14 +82,7 @@
             </span>
           </a>
         </li>
-        <li>
-          <a href="{{ route('logout') }}">
-            <i class="fa fa-envelope"></i> <span>Logout</span>        
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-        </li>
+        
         
         
       </ul>
