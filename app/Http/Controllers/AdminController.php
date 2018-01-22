@@ -23,7 +23,7 @@ class AdminController extends Controller
         $user_role = Auth::user()->user_role;
         if($user_role==1)
         {         
-        return view("admin/dashboard")->with('page_title', "Admin Dashboard");
+        return view("admin.dashboard")->with('page_title', "Admin Dashboard");
         }else
         {          
             return view("index")->with('page_title', "Admin Dashboard");

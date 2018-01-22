@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect('admin/dashboard');
+        return view('admin/dashboard')->with('page_title', "Admin Dashboard");
     }
 }
